@@ -8,8 +8,8 @@ import (
 
 	. "github.com/pingcap/check"
 
-	"github.com/go-mysql-org/go-mysql/client"
-	"github.com/go-mysql-org/go-mysql/test_util"
+	"github.com/aravindc26/go-mysql/client"
+	"github.com/aravindc26/go-mysql/test_util"
 )
 
 type schemaTestSuite struct {

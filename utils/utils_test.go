@@ -4,5 +4,5 @@ package utils
 import (
 	_ "github.com/pingcap/check"
 
-	_ "github.com/go-mysql-org/go-mysql/test_util"
+	_ "github.com/aravindc26/go-mysql/test_util"
 )

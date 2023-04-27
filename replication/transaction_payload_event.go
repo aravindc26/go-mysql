@@ -8,7 +8,7 @@ import (
 
 	"github.com/DataDog/zstd"
 
-	. "github.com/go-mysql-org/go-mysql/mysql"
+	. "github.com/aravindc26/go-mysql/mysql"
 )
 
 // On The Wire: Field Types

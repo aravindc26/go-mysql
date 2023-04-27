@@ -12,8 +12,8 @@ import (
 	"net"
 	"sync"
 
-	. "github.com/go-mysql-org/go-mysql/mysql"
-	"github.com/go-mysql-org/go-mysql/utils"
+	. "github.com/aravindc26/go-mysql/mysql"
+	"github.com/aravindc26/go-mysql/utils"
 	"github.com/pingcap/errors"
 )
 

@@ -10,9 +10,9 @@ import (
 	"github.com/pingcap/tidb/parser"
 	"github.com/siddontang/go-log/log"
 
-	"github.com/go-mysql-org/go-mysql/mysql"
-	"github.com/go-mysql-org/go-mysql/replication"
-	"github.com/go-mysql-org/go-mysql/test_util"
+	"github.com/aravindc26/go-mysql/mysql"
+	"github.com/aravindc26/go-mysql/replication"
+	"github.com/aravindc26/go-mysql/test_util"
 )
 
 func Test(t *testing.T) {
