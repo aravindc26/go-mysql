@@ -33,7 +33,7 @@ func NewServerTLSConfig(caPem, certPem, keyPem []byte, authType tls.ClientAuthTy
 }
 
 // extract RSA public key from certificate
-func getPublicKeyFromCert(certPem []byte) []byte {
+func GetPublicKeyFromCert(certPem []byte) []byte {
 	block, _ := pem.Decode(certPem)
 	crt, err := x509.ParseCertificate(block.Bytes)
 	if err != nil {
@@ -48,7 +48,7 @@ func getPublicKeyFromCert(certPem []byte) []byte {
 
 // generate and sign RSA certificates with given CA
 // see: https://fale.io/blog/2017/06/05/create-a-pki-in-golang/
-func generateAndSignRSACerts(caPem, caKey []byte) ([]byte, []byte) {
+func GenerateAndSignRSACerts(caPem, caKey []byte) ([]byte, []byte) {
 	// Load CA
 	catls, err := tls.X509KeyPair(caPem, caKey)
 	if err != nil {
@@ -96,7 +96,7 @@ func generateAndSignRSACerts(caPem, caKey []byte) ([]byte, []byte) {
 
 // generate CA in PEM
 // see: https://github.com/golang/go/blob/master/src/crypto/tls/generate_cert.go
-func generateCA() ([]byte, []byte) {
+func GenerateCA() ([]byte, []byte) {
 	serialNumberLimit := new(big.Int).Lsh(big.NewInt(1), 128)
 	serialNumber, err := rand.Int(rand.Reader, serialNumberLimit)
 	if err != nil {

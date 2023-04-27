@@ -44,8 +44,8 @@ type Server struct {
 // the client side without providing a client-side certificate. So only when you need the server to verify client
 // identity for maximum security, you need to set a signed certificate for the client.
 func NewDefaultServer() *Server {
-	caPem, caKey := generateCA()
-	certPem, keyPem := generateAndSignRSACerts(caPem, caKey)
+	caPem, caKey := GenerateCA()
+	certPem, keyPem := GenerateAndSignRSACerts(caPem, caKey)
 	tlsConf := NewServerTLSConfig(caPem, certPem, keyPem, tls.VerifyClientCertIfGiven)
 	return &Server{
 		serverVersion:   "5.7.0",
@@ -54,7 +54,7 @@ func NewDefaultServer() *Server {
 			CLIENT_TRANSACTIONS | CLIENT_SECURE_CONNECTION | CLIENT_PLUGIN_AUTH | CLIENT_SSL | CLIENT_PLUGIN_AUTH_LENENC_CLIENT_DATA,
 		collationId:       DEFAULT_COLLATION_ID,
 		defaultAuthMethod: AUTH_NATIVE_PASSWORD,
-		pubKey:            getPublicKeyFromCert(certPem),
+		pubKey:            GetPublicKeyFromCert(certPem),
 		tlsConfig:         tlsConf,
 		cacheShaPassword:  new(sync.Map),
 	}
